@@ -1,12 +1,6 @@
-cd /mnt/c/Users/rlyst/netology/10-monitoring-04-elk/elk-docker
+### Файл `docker-compose.yml`
 
-sudo sysctl -w vm.max_map_count=262144 - эта команда — обязательный шаг для подготовки Linux-хоста под запуск Elasticsearch, чтобы избежать проблем с памятью.
-
-docker compose up -d
-
-docker compose down
-
-Файл `docker-compose.yml`, запускает и связывает сервисы ELK-стека (Elasticsearch, Logstash, Kibana, Filebeat) и дополнительного приложения в Docker-контейнерах. Вот, что делает каждый блок:
+Запускает и связывает сервисы ELK-стека (Elasticsearch, Logstash, Kibana, Filebeat) и дополнительного приложения в Docker-контейнерах. Вот, что делает каждый блок:
 
 ***
 
@@ -75,6 +69,22 @@ docker compose down
 
 ### 8. Networks
 - Создана сеть `elastic` с драйвером `bridge`, для связи всех контейнеров.
+
+***
+
+## Запуск
+
+1. Подготовьте директории `./configs` с конфигами.
+2. На хосте выполните:
+   ```
+   sudo sysctl -w vm.max_map_count=262144
+   ```
+3. Запустите Docker stack:
+   ```
+   docker compose up -d
+   ```
+4. Kibana будет готова для анализа логов по адресу:  
+   `http://localhost:5601`
 
 ***
 
