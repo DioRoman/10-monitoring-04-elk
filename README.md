@@ -133,7 +133,7 @@ output.logstash:
 
 ***
 
-### 4. Логгирование самого Filebeat
+### 4. Логирование самого Filebeat
 ```yaml
 logging.json: true
 logging.metrics.enabled: false
